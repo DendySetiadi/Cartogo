@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "280224216779",
+    "project_id": "aplikqsisaya",
+    "storage_bucket": "aplikqsisaya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280224216779:android:b8081c2e22b0edc1c98d4e",
+        "android_client_info": {
+          "package_name": "com.example.aplikqsisaya"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEV8EwjxmFLSV5rm8b1SUqZXLfe2LmgWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280224216779:android:74962e6515d55e9dc98d4e",
+        "android_client_info": {
+          "package_name": "com.example.test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEV8EwjxmFLSV5rm8b1SUqZXLfe2LmgWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
