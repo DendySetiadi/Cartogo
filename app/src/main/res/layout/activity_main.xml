@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/putihatas"></ImageView>
+        android:src="@drawable/putihatas"
+        app:layout_constraintStart_toStartOf="parent"></ImageView>
     <ImageView
         android:layout_width="200dp"
         android:layout_height="100dp"
@@ -66,23 +66,14 @@
     <TextView
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="Belum Punya Akun?"
-        android:textSize="10dp"
+        android:text="Belum Punya Akun? Daftar"
+        android:textSize="12dp"
         android:layout_marginTop="538dp"
         android:layout_marginLeft="157dp"
         android:id="@+id/belumpunyaakun"
         android:textColor="@color/abu"
         ></TextView>
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="Daftar"
-        android:textSize="10dp"
-        android:layout_marginTop="538dp"
-        android:layout_marginLeft="255dp"
-        android:id="@+id/daftar"
-        android:textColor="@color/blue"
-        ></TextView>
+
     <com.google.android.material.textfield.TextInputLayout
 
         android:layout_width="320dp"
@@ -97,7 +88,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="330dp"
             android:layout_height="50dp"
-            android:id="@+id/masuk_email"/>
+            android:id="@+id/masukemail2"/>
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -116,7 +107,7 @@
         app:helperText="">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/InputPassword"
+            android:id="@+id/masukpassword"
             android:layout_width="330dp"
             android:layout_height="50dp" />
 
@@ -138,6 +129,8 @@
         android:layout_marginLeft="50dp"
         android:id="@+id/garishitam2"
         ></ImageView>
+
+
 
 
 </RelativeLayout>

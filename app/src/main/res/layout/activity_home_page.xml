@@ -1,14 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomePage">
+    tools:context=".Home">
 
-    <TextView
-        android:layout_width="127dp"
-        android:layout_height="84dp"
-        android:text="hallo"></TextView>
+    <ImageView
+        android:id="@+id/putihatas2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/putihatas" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="285dp"
+        android:layout_marginTop="23dp"
+        android:src="@drawable/cartogologo" />
+
+    <ImageView
+        android:id="@+id/mobil"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="58dp"
+        android:src="@drawable/gambarmobil" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="434dp"
+        android:layout_marginTop="170dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/mobil"
+        app:layout_constraintBottom_toTopOf="@+id/dengansupir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:name="com.example.test.Lepaskunci" />
+
+    <Button
+        android:id="@+id/dengansupir"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="126dp"
+        android:text="Dengan Supir"
+        android:backgroundTint="@color/abu"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/lepaskunci"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="126dp"
+        android:backgroundTint="@color/blue"
+        android:text="Lepas Kunci"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainer"
+        app:layout_constraintStart_toEndOf="@+id/dengansupir"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="619dp"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="#24A8DF"
+        android:backgroundTintMode="src_over"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toBottomOf="@+id/dengansupir" />
 </RelativeLayout>
-
