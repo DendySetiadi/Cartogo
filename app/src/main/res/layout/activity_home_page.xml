@@ -97,13 +97,4 @@
         android:layout_marginTop="634dp"
         app:srcCompat="@drawable/_icon__search_" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="58dp"
-        app:srcCompat="@drawable/_icon__person_outline_" />
 </RelativeLayout>
