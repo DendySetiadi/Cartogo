@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="428dp"
-        android:layout_height="730dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:srcCompat="@drawable/rectangle_29"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-2dp" />
@@ -78,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="619dp"
+        android:layout_marginTop="610dp"
         android:background="?attr/colorPrimary"
         android:backgroundTint="#24A8DF"
         android:backgroundTintMode="src_over"
@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="190dp"
-        android:layout_marginTop="634dp"
+        android:layout_marginTop="618dp"
         app:srcCompat="@drawable/_icon__search_" />
 
     <ImageView
@@ -101,8 +101,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginBottom="65dp"
         app:srcCompat="@drawable/_icon__home_outline_" />
 
     <ImageView
@@ -111,8 +111,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="300dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="261dp"
+        android:layout_marginBottom="62dp"
         app:srcCompat="@drawable/_icon__person_outline_" />
 
 </RelativeLayout>
