@@ -27,16 +27,17 @@
         android:layout_height="100dp"
         android:src="@drawable/cartogologo"
         android:layout_marginTop="80dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="85dp"
         android:id="@+id/cartogologo2"
         ></ImageView>
     <TextView
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="Daftar"
-        android:textSize="30dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="230dp"
+        android:text="Hallo, Selamat datang di CartoGo"
+        android:textStyle="bold"
+        android:textSize="15dp"
         android:id="@+id/daftar"
         ></TextView>
     <com.google.android.material.textfield.TextInputLayout
