@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="173dp"
-        android:text="dd-mm-yyyy"
+        android:hint="dd-mm-yyyy"
         android:textSize="16dp" />
 
     <ImageView
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="275dp"
         android:layout_marginTop="173dp"
-        android:text="07:00"
+        android:hint="07:00"
         android:textSize="16dp" />
 
     <TextView
@@ -124,7 +124,7 @@
         android:layout_height="24dp"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="263dp"
-        android:text="dd-mm-yyyy"
+        android:hint="dd-mm-yyyy"
         android:textSize="16dp" />
 
     <ImageView
@@ -156,7 +156,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="275dp"
         android:layout_marginTop="263dp"
-        android:text="07:00"
+        android:hint="07:00"
         android:textSize="16dp" />
 
     <ImageView
@@ -192,7 +192,7 @@
             android:layout_height="52dp"
             android:layout_weight="1"
             android:inputType="none"
-            android:text="Sleman" />
+            android:hint="Sleman" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
