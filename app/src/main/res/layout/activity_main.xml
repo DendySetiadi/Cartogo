@@ -84,7 +84,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
 
-        android:layout_width="298dp"
+        android:layout_width="276dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="275dp"
@@ -96,7 +96,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/masukemail2"
             android:layout_width="match_parent"
-            android:layout_height="42dp" />
+            android:layout_height="52dp" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -104,7 +104,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TextInputLayout"
-        android:layout_width="331dp"
+        android:layout_width="283dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="347dp"
@@ -116,25 +116,10 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/masukpassword"
-            android:layout_width="330dp"
-            android:layout_height="50dp" />
+            android:layout_width="276dp"
+            android:layout_height="48dp" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/garishitam"
-        android:layout_marginTop="280dp"
-        android:layout_marginLeft="50dp"
-        android:id="@+id/garishitam"
-        ></ImageView>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/garishitam"
-        android:layout_marginTop="352dp"
-        android:layout_marginLeft="50dp"
-        android:id="@+id/garishitam2"
-        ></ImageView>
+
 </RelativeLayout>
