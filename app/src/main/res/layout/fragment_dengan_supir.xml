@@ -9,20 +9,20 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:layout_width="180dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="27dp"
-        android:textSize="19dp"
-        android:text="Lokasi Rental Mobil" />
+        android:layout_marginTop="30dp"
+        android:text="Lokasi Rental Mobil"
+        android:textSize="19dp" />
 
     <TextView
-        android:layout_width="190dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="125dp"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="27dp"
-        android:textSize="19dp"
-        android:text="Tanggal Penjemputan" />
+        android:layout_marginTop="125dp"
+        android:text="Tanggal Penjemputan"
+        android:textSize="19dp" />
 
     <ImageView
         android:id="@+id/kotak_tanggal"
@@ -47,14 +47,15 @@
         android:layout_marginTop="169dp"
         android:layout_marginLeft="56dp"
         android:src="@drawable/garisabu" />
+
     <TextView
         android:id="@+id/tanggal"
-        android:layout_width="180dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="173dp"
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="65dp"
-        android:textSize="16dp"
-        android:text="dd-mm-yyyy" />
+        android:layout_marginTop="173dp"
+        android:text="dd-mm-yyyy"
+        android:textSize="16dp" />
 
     <ImageView
         android:id="@+id/kotakjam"
@@ -81,7 +82,7 @@
 
     <TextView
         android:id="@+id/jam"
-        android:layout_width="114dp"
+        android:layout_width="66dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="300dp"
         android:layout_marginTop="173dp"
@@ -136,11 +137,11 @@
 
         <AutoCompleteTextView
             android:id="@+id/autoComplete"
-            android:layout_width="361dp"
+            android:layout_width="306dp"
             android:layout_height="52dp"
             android:layout_weight="1"
             android:inputType="none"
-            android:text="  Sleman" />
+            android:text="Sleman" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
