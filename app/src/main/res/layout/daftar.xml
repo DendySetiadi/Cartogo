@@ -43,104 +43,79 @@
         android:id="@+id/daftar" />
 
     <com.google.android.material.textfield.TextInputLayout
-
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
         android:layout_marginTop="275dp"
         android:hint="Masukkan Email "
         app:boxBackgroundColor="@color/abumuda" >
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:id="@+id/masukemail2"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/masukemail2"
+            android:layout_width="303dp"
+            android:layout_height="55dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TextInputLayout"
-        android:layout_width="327dp"
+        android:layout_width="304dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="365dp"
         android:hint="Masukkan Password"
         app:boxBackgroundColor="@color/abumuda"
         app:endIconMode="password_toggle" >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/masukpassword"
-            android:layout_width="330dp"
-            android:layout_height="50dp" />
+            android:layout_width="303dp"
+            android:layout_height="55dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
 
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="445dp"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="455dp"
         android:hint="Konfirmasi Password"
         app:endIconMode="password_toggle"
         app:boxBackgroundColor="@color/abumuda" >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="330dp"
-            android:layout_height="50dp"
+            android:layout_width="303dp"
+            android:layout_height="55dp"
             android:id="@+id/konfirmasipassword"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/garishitam"
-        android:layout_marginTop="280dp"
-        android:layout_marginLeft="50dp"
-        android:id="@+id/garishitam" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/garishitam"
-        android:layout_marginTop="367dp"
-        android:layout_marginLeft="50dp"
-        android:id="@+id/garishitam2" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/garishitam"
-        android:layout_marginTop="450dp"
-        android:layout_marginLeft="50dp"
-        android:id="@+id/garishitam3" />
 
     <ImageView
         android:id="@+id/tomboldaftar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/tombolmasuk"
-        android:layout_marginTop="538dp"
-        android:layout_marginLeft="130dp"/>
+        android:layout_marginTop="540dp"
+        android:layout_marginLeft="95dp"/>
 
     <TextView
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Daftar"
         android:textSize="20dp"
-        android:layout_marginTop="548dp"
-        android:layout_marginLeft="190dp"
+        android:layout_marginTop="549dp"
+        android:layout_marginLeft="150dp"
         android:id="@+id/daftar2"
         android:textColor="@color/white" />
 
     <TextView
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Sudah punya akun? Masuk"
         android:textSize="12dp"
-        android:layout_marginTop="586dp"
-        android:layout_marginLeft="143dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginLeft="105dp"
         android:id="@+id/masuk"
         android:textColor="@color/abu" />
 

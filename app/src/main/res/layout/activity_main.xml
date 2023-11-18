@@ -48,7 +48,7 @@
         android:layout_width="107dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="243dp"
-        android:layout_marginTop="415dp"
+        android:layout_marginTop="425dp"
         android:text="Lupa Kata Sandi?"
         android:textColor="@color/blue"
         android:textSize="11dp"
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/tombolmasuk"
         android:layout_marginTop="490dp"
-        android:layout_marginLeft="95dp"/>
+        android:layout_marginLeft="95dp" />
 
     <TextView
         android:id="@+id/masuk2"
