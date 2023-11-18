@@ -33,86 +33,44 @@
         android:src="@drawable/cartogologo" />
 
     <TextView
-        android:id="@+id/masuk"
+        android:id="@+id/sandi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="230dp"
-        android:text="Hallo, Silahkan masuk ke CartoGo"
+        android:text="Masukkan Email atau Username untuk mengubah kata sandi"
         android:textStyle="bold"
         android:textSize="15dp" />
-
-
-    <TextView
-        android:id="@+id/lupakatasandi"
-        android:layout_width="107dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="243dp"
-        android:layout_marginTop="425dp"
-        android:text="Lupa Kata Sandi?"
-        android:textColor="@color/blue"
-        android:textSize="11dp"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/tombolmasuk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/tombolmasuk"
-        android:layout_marginTop="490dp"
+        android:layout_marginTop="400dp"
         android:layout_marginLeft="95dp" />
 
     <TextView
-        android:id="@+id/masuk2"
+        android:id="@+id/lanjut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="499dp"
-        android:text="Masuk"
+        android:layout_marginTop="410dp"
+        android:text="Lanjut"
         android:textColor="@color/white"
         android:textSize="20dp" />
 
-    <TextView
-        android:id="@+id/belumpunyaakun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="548dp"
-        android:text="Belum Punya Akun? Daftar"
-        android:textColor="@color/abu"
-        android:textSize="12dp" />
-
     <com.google.android.material.textfield.TextInputLayout
-
         android:layout_width="304dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="275dp"
+        android:layout_marginTop="290dp"
         android:hint="Masukkan Email atau Username"
         app:boxBackgroundColor="@color/abumuda" >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/masukemail2"
             android:layout_width="303dp"
-            android:layout_height="55dp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextInputLayout"
-        android:layout_width="304dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="347dp"
-        android:hint="Masukkan Password"
-        app:boxBackgroundColor="@color/abumuda"
-        app:counterMaxLength="10"
-        app:endIconMode="password_toggle"
-        app:helperText="" >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/masukpassword"
-            android:layout_width="304dp"
             android:layout_height="55dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
