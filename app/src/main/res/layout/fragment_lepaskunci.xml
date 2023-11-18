@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -72,6 +73,7 @@
         android:layout_marginTop="171dp"
         android:layout_marginLeft="237dp"
         android:src="@drawable/jam" />
+
     <ImageView
         android:id="@+id/imageView51"
         android:layout_width="wrap_content"
@@ -96,6 +98,7 @@
         android:layout_marginTop="219dp"
         android:text="Tanggal Pengembalian"
         android:textSize="19dp" />
+
     <ImageView
         android:id="@+id/kotak_pengembalian"
         android:layout_width="wrap_content"
@@ -103,6 +106,7 @@
         android:layout_marginTop="260dp"
         android:layout_marginLeft="27dp"
         android:src="@drawable/kotak_tanggal" />
+
     <ImageView
         android:id="@+id/kalender2"
         android:layout_width="wrap_content"
@@ -110,6 +114,7 @@
         android:layout_marginTop="265dp"
         android:layout_marginLeft="30dp"
         android:src="@drawable/kalender" />
+
     <ImageView
         android:id="@+id/imageView52"
         android:layout_width="wrap_content"
@@ -142,6 +147,7 @@
         android:layout_marginLeft="237dp"
         android:layout_marginTop="262dp"
         android:src="@drawable/jam" />
+
     <ImageView
         android:id="@+id/imageView53"
         android:layout_width="wrap_content"
@@ -177,7 +183,7 @@
         android:layout_marginTop="396dp"
         android:text="Sudah punya akun? Masuk"
         android:textColor="@color/abu"
-        android:textSize="12dp"></TextView>
+        android:textSize="12dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -193,7 +199,7 @@
             android:layout_weight="1"
             android:inputType="none"
             android:hint="Sleman" />
-    </com.google.android.material.textfield.TextInputLayout>
 
+    </com.google.android.material.textfield.TextInputLayout>
 
 </RelativeLayout>
