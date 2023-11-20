@@ -11,6 +11,8 @@
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         app:srcCompat="@drawable/rectangle_29"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-2dp" />
@@ -40,15 +42,16 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
+        android:name="com.example.test.Lepaskunci"
         android:layout_width="match_parent"
-        android:layout_height="434dp"
+        android:layout_height="500dp"
+        android:layout_alignParentStart="true"
         android:layout_marginTop="170dp"
         android:background="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/mobil"
         app:layout_constraintBottom_toTopOf="@+id/dengansupir"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:name="com.example.test.Lepaskunci" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobil" />
 
     <Button
         android:id="@+id/dengansupir"
@@ -82,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="610dp"
+        android:layout_marginTop="668dp"
         android:background="?attr/colorPrimary"
         android:backgroundTint="#24A8DF"
         android:backgroundTintMode="src_over"
@@ -91,32 +94,27 @@
         app:layout_constraintTop_toBottomOf="@+id/dengansupir" />
 
     <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="675dp"
+        android:layout_marginLeft="50dp"
+        app:srcCompat="@drawable/vector" />
+
+    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="190dp"
-        android:layout_marginTop="618dp"
+        android:layout_marginTop="675dp"
+        android:layout_marginLeft="165dp"
         app:srcCompat="@drawable/_icon__search_" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginBottom="65dp"
-        app:srcCompat="@drawable/_icon__home_outline_" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="261dp"
-        android:layout_marginBottom="62dp"
-        app:srcCompat="@drawable/_icon__person_outline_" />
+        android:layout_marginTop="675dp"
+        android:layout_marginLeft="275dp"
+        app:srcCompat="@drawable/group" />
 
 </RelativeLayout>
