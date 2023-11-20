@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SandiBaru">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -71,6 +71,21 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/sandibaru"
+            android:layout_width="303dp"
+            android:layout_height="55dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="365dp"
+        android:hint="Kata sandi baru"
+        app:boxBackgroundColor="@color/abumuda" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/konfrimasisandi"
             android:layout_width="303dp"
             android:layout_height="55dp" />
 
