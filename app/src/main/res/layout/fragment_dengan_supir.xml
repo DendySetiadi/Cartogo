@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -37,8 +36,8 @@
         android:id="@+id/kalender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="174dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginTop="173dp"
+        android:layout_marginLeft="29dp"
         android:src="@drawable/kalender" />
 
     <ImageView
@@ -55,15 +54,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="173dp"
-        android:hint="dd-mm-yyyy"
+        android:text="dd-mm-yyyy"
         android:textSize="16dp" />
 
     <ImageView
         android:id="@+id/kotakjam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="235dp"
         android:layout_marginTop="169dp"
+        android:layout_marginLeft="259dp"
         android:src="@drawable/kotakjam" />
 
     <ImageView
@@ -71,26 +70,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="171dp"
-        android:layout_marginLeft="237dp"
+        android:layout_marginLeft="261dp"
         android:src="@drawable/jam" />
-
     <ImageView
         android:id="@+id/imageView51"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="169dp"
-        android:layout_marginLeft="265dp"
+        android:layout_marginLeft="289dp"
         android:src="@drawable/garisabu" />
 
     <TextView
         android:id="@+id/jam"
-        android:layout_width="67dp"
+        android:layout_width="66dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="275dp"
+        android:layout_marginLeft="300dp"
         android:layout_marginTop="173dp"
-        android:hint="07:00"
+        android:text="07:00"
         android:textSize="16dp" />
-
     <TextView
         android:layout_width="200dp"
         android:layout_height="26dp"
@@ -98,7 +95,6 @@
         android:layout_marginLeft="27dp"
         android:textSize="19dp"
         android:text="Durasi" />
-
     <ImageView
         android:id="@+id/imageView31"
         android:layout_width="wrap_content"
@@ -108,33 +104,30 @@
         android:src="@drawable/kotak_tanggal" />
 
     <TextView
-        android:layout_width="172dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_width="180dp"
+        android:layout_height="24dp"
         android:layout_marginTop="263dp"
-        android:hint="1 hari"
-        android:textSize="16dp" />
+        android:layout_marginLeft="40dp"
+        android:textSize="16dp"
+        android:text="1 hari" />
 
     <ImageView
         android:id="@+id/tombolcari"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="360dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="345dp"
         android:src="@drawable/tombolcari" />
-
     <TextView
-        android:id="@+id/masuk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="143dp"
-        android:layout_marginTop="396dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:text="Sudah punya akun? Masuk"
+        android:textSize="12dp"
+        android:layout_marginTop="396dp"
+        android:layout_marginLeft="143dp"
+        android:id="@+id/masuk"
         android:textColor="@color/abu"
-        android:textSize="12dp" />
-
+        ></TextView>
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="361dp"
@@ -148,8 +141,8 @@
             android:layout_height="52dp"
             android:layout_weight="1"
             android:inputType="none"
-            android:hint="Lokasi" />
-
+            android:text="Sleman" />
     </com.google.android.material.textfield.TextInputLayout>
+
 
 </RelativeLayout>

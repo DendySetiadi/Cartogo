@@ -28,6 +28,10 @@
         <activity
             android:name=".Daftar"
             android:exported="false" />
+        <activity
+            android:name=".LupaSandi"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>

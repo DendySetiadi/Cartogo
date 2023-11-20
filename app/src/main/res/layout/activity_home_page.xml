@@ -82,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="657dp"
+        android:layout_marginTop="610dp"
         android:background="?attr/colorPrimary"
         android:backgroundTint="#24A8DF"
         android:backgroundTintMode="src_over"
@@ -96,23 +96,27 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="190dp"
-        android:layout_marginTop="670dp"
+        android:layout_marginTop="618dp"
         app:srcCompat="@drawable/_icon__search_" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="670dp"
-        app:srcCompat="@drawable/vector" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="670dp"
-        app:srcCompat="@drawable/group" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginBottom="65dp"
+        app:srcCompat="@drawable/_icon__home_outline_" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="261dp"
+        android:layout_marginBottom="62dp"
+        app:srcCompat="@drawable/_icon__person_outline_" />
 
 </RelativeLayout>

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.TextView
 import android.widget.Toast
 import com.example.test.databinding.ActivityMainBinding
 import com.google.android.material.textfield.TextInputEditText
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -29,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         // Initialize Firebase Authentication
         firebaseAuth = FirebaseAuth.getInstance()
 
+        binding.lupakatasandi.setOnClickListener{
+            val intent = Intent(this, LupaSandi::class.java)
+            startActivity(intent)
+        }
         binding.belumpunyaakun.setOnClickListener {
             val intent = Intent(this, Daftar::class.java)
             startActivity(intent)
