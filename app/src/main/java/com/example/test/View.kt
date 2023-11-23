@@ -1,31 +1,37 @@
 package com.example.test
 
+import ProfilePage
+import SearchPage
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.test.databinding.ViewBinding
 
 class View : AppCompatActivity() {
-    lateinit var binding: ViewBinding
+    lateinit var viewBinding: ViewBinding
     var isLepaskunciActive = true // Variable untuk melacak tombol yang aktif
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ViewBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        viewBinding = ViewBinding.inflate(layoutInflater)
+        setContentView(viewBinding.root)
 
         // Transaksi fragment awal untuk menampilkan HomePage
         if (savedInstanceState == null) {
             replaceFragment(HomePage())
         }
 
-        binding.Home.setOnClickListener {
+        setupClickListeners()
+    }
+
+    private fun setupClickListeners() {
+        viewBinding.Home.setOnClickListener {
             replaceFragment(HomePage())
         }
-        binding.Search.setOnClickListener {
+        viewBinding.Search.setOnClickListener {
             replaceFragment(SearchPage())
         }
-        binding.Profile.setOnClickListener {
+        viewBinding.Profile.setOnClickListener {
             replaceFragment(ProfilePage())
         }
     }
@@ -34,6 +40,7 @@ class View : AppCompatActivity() {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragmentContainer, fragment)
+        fragmentTransaction.addToBackStack(null) // Optional: menambahkan ke back stack
         fragmentTransaction.commit()
     }
 }
