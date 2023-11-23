@@ -75,6 +75,7 @@ class DenganSupir : Fragment() {
             val intent = Intent(requireContext(), MainActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     private fun updateLabel(myCalendar: Calendar) {

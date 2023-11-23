@@ -13,10 +13,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [profile_page.newInstance] factory method to
+ * Use the [ProfilePage.newInstance] factory method to
  * create an instance of this fragment.
  */
-class profile_page : Fragment() {
+class ProfilePage : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -49,7 +49,7 @@ class profile_page : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            profile_page().apply {
+            ProfilePage().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

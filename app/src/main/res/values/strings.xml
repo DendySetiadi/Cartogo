@@ -11,5 +11,20 @@
         <item>Gunungkidul</item>
         <item>Yogyakarta</item>
     </string-array>
-
+    <string-array name="durasi">
+        <item>1 day</item>
+        <item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>5 days</item>
+        <item>6 days</item>
+        <item>7 days</item>
+        <item>8 days</item>
+        <item>9 days</item>
+        <item>10 days</item>
+        <item>11 days</item>
+        <item>12 days</item>
+        <item>13 days</item>
+        <item>14 days</item>
+    </string-array>
 </resources>
