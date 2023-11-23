@@ -1,5 +1,6 @@
 package com.example.test
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,5 +17,14 @@ class ProfilePage : Fragment(R.layout.fragment_profile_page) {
     ): View? {
         binding = FragmentProfilePageBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.setting.setOnClickListener {
+            val intent = Intent(requireContext(), UbahProfile::class.java)
+            startActivity(intent)
+        }
     }
 }

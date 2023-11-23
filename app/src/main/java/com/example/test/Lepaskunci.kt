@@ -108,7 +108,6 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
             val intent = Intent(requireContext(), MainActivity::class.java)
             startActivity(intent)
         }
-
     }
     private fun updateLabel(myCalendar: Calendar) {
         val myFormat = "dd-MM-yyyy"
