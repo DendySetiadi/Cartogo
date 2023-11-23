@@ -9,6 +9,17 @@
     android:backgroundTint="@color/white">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/rectangle_29"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
     <TextView
         android:layout_width="183dp"
         android:layout_height="wrap_content"
@@ -180,7 +191,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="143dp"
-        android:layout_marginTop="396dp"
+        android:layout_marginTop="395dp"
         android:text="Sudah punya akun? Masuk"
         android:textColor="@color/abu"
         android:textSize="12dp" />

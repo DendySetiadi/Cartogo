@@ -1,10 +1,7 @@
 package com.example.test
 
-import ProfilePage
-import SearchPage
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentTransaction
 import com.example.test.databinding.ViewBinding
 
 class View : AppCompatActivity() {

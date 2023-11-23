@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 import kotlin.concurrent.timer
 
-class DenganSupir : Fragment() {
+class DenganSupir : Fragment(R.layout.fragment_dengan_supir) {
     private lateinit var binding: FragmentDenganSupirBinding
     private lateinit var tanggal: TextView
     private lateinit var kotak_tanggal: ImageView

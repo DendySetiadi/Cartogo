@@ -8,12 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
 import com.example.test.databinding.FragmentHomePageBinding
 
-class HomePage : AppCompatActivity(){
+class HomePage : Fragment(R.layout.fragment_home_page){
     lateinit var binding: FragmentHomePageBinding
     var isLepaskunciActive = true // Variable to track the active button
+    
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

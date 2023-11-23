@@ -1,3 +1,5 @@
+package com.example.test
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,5 +9,5 @@ import com.example.test.R
 import com.example.test.databinding.FragmentSearchPageBinding
 
 class SearchPage : Fragment(R.layout.fragment_search_page) {
-    private lateinit var binding: FragmentSearchPageBinding
+    lateinit var binding: FragmentSearchPageBinding
 }

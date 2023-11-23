@@ -20,7 +20,7 @@
     <ImageView
         android:id="@+id/mobil"
         android:layout_width="500dp"
-        android:layout_height="270dp"
+        android:layout_height="273dp"
         android:src="@drawable/pexels_photo_13711948_1" />
 
     <androidx.fragment.app.FragmentContainerView
