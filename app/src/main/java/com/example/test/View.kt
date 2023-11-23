@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.test.databinding.ActivityHomePageBinding
-class Home : AppCompatActivity() {
+class View : AppCompatActivity() {
     lateinit var binding: ActivityHomePageBinding
     var isLepaskunciActive = true // Variable to track the active button
 

@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="275dp"
         android:layout_marginTop="173dp"
-        android:text="07:00"
+        android:hint="07:00"
         android:textSize="16dp" />
 
     <TextView
