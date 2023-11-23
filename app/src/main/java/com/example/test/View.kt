@@ -4,7 +4,7 @@ import ProfilePage
 import SearchPage
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.test.databinding.ViewBinding
 
 class View : AppCompatActivity() {
@@ -45,4 +45,22 @@ class View : AppCompatActivity() {
         fragmentTransaction.addToBackStack(null) // Optional: menambahkan ke back stack
         fragmentTransaction.commit()
     }
+
+    private fun replaceFragment(fragment: SearchPage) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragmentContainer, fragment)
+        fragmentTransaction.addToBackStack(null) // Optional: menambahkan ke back stack
+        fragmentTransaction.commit()
+    }
+
+    private fun replaceFragment(fragment: ProfilePage) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragmentContainer, fragment)
+        fragmentTransaction.addToBackStack(null) // Optional: menambahkan ke back stack
+        fragmentTransaction.commit()
+    }
 }
+
+
