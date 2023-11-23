@@ -24,6 +24,8 @@ class View : AppCompatActivity() {
         setupClickListeners()
     }
 
+    //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
     private fun setupClickListeners() {
         viewBinding.Home.setOnClickListener {
             replaceFragment(HomePage())
@@ -36,7 +38,7 @@ class View : AppCompatActivity() {
         }
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: HomePage) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragmentContainer, fragment)
