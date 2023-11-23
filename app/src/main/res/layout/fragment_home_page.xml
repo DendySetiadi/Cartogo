@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home_page">
+    tools:context=".View">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/rectangle_29"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/mobil"
+        android:layout_width="500dp"
+        android:layout_height="273dp"
+        android:src="@drawable/pexels_photo_13711948_1" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:name="com.example.test.Lepaskunci"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="170dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/dengansupir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobil" />
+
+    <Button
+        android:id="@+id/lepaskunci"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="126dp"
+        android:backgroundTint="@color/blue"
+        android:text="Lepas Kunci"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dengansupir"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainer" />
+
+    <Button
+        android:id="@+id/dengansupir"
+        android:layout_width="177dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginEnd="0dp"
+        android:backgroundTint="@color/abu"
+        android:text="Dengan Supir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainer" />
+
+</RelativeLayout>
