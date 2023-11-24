@@ -24,12 +24,16 @@
         android:src="@drawable/putihatas" />
 
     <ImageView
-        android:id="@+id/profil"
+        android:id="@+id/profill"
         android:layout_width="50dp"
-        android:layout_height="55dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="5dp"
-        android:src="@drawable/profile"
-        android:layout_marginBottom="16dp" />
+        app:srcCompat="@drawable/baseline_account_circle_24"
+        android:background="@drawable/circle_background"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        android:outlineProvider="background"/>
 
     <TextView
         android:id="@+id/nama"

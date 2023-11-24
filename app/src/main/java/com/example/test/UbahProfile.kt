@@ -11,6 +11,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.test.databinding.FragmentUbahProfileBinding
 
 class UbahProfile : Fragment(R.layout.fragment_ubah_profile) {
@@ -19,6 +23,7 @@ class UbahProfile : Fragment(R.layout.fragment_ubah_profile) {
     private lateinit var profil: ImageView
     private lateinit var gantiProfil: Button
     private lateinit var profileManager: ProfileManager
+    private lateinit var viewModel: ProfileView
 
     companion object {
         const val PICK_IMAGE_REQUEST = 1
@@ -34,6 +39,8 @@ class UbahProfile : Fragment(R.layout.fragment_ubah_profile) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProvider(requireActivity()).get(ProfileView::class.java)
 
         profileManager = ProfileManager(requireContext())
 
@@ -57,6 +64,8 @@ class UbahProfile : Fragment(R.layout.fragment_ubah_profile) {
             binding.profil.setImageURI(selectedImageUri)
 
             profileManager.setProfileImageUri(selectedImageUri)
+
+            viewModel.updateProfileImageUri(selectedImageUri)
         }
     }
 
