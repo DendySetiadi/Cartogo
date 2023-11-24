@@ -2,35 +2,49 @@ package com.example.test
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
-import com.example.test.databinding.UbahProfileBinding
+import com.example.test.databinding.FragmentUbahProfileBinding
 
-class UbahProfile : AppCompatActivity() {
+class UbahProfile : Fragment(R.layout.fragment_ubah_profile) {
+    private var _binding: FragmentUbahProfileBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var profil: ImageView
+    private lateinit var gantiProfil: Button
+    private lateinit var profileManager: ProfileManager
+
     companion object {
         const val PICK_IMAGE_REQUEST = 1
     }
 
-    private lateinit var  binding: UbahProfileBinding
-    private lateinit var profil: ImageView
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentUbahProfileBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = UbahProfileBinding.inflate(layoutInflater)
-        setContentView(R.layout.ubah_profile)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        profil = findViewById(R.id.profil)
-        val gantiProfil: Button = findViewById(R.id.gantiProfil)
+        profileManager = ProfileManager(requireContext())
 
-        gantiProfil.setOnClickListener {
-            pickImageFromGallery()
+        binding.profil.setImageURI(profileManager.getProfileImageUri())
+
+        binding.gantiProfil.setOnClickListener {
+            openGallery()
         }
     }
 
-    private fun pickImageFromGallery() {
+    private fun openGallery() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(intent, PICK_IMAGE_REQUEST)
     }
@@ -39,9 +53,15 @@ class UbahProfile : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
-            val selectedImage = data.data
-            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedImage)
-            profil.setImageBitmap(bitmap)
+            val selectedImageUri: Uri = data.data!!
+            binding.profil.setImageURI(selectedImageUri)
+
+            profileManager.setProfileImageUri(selectedImageUri)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
