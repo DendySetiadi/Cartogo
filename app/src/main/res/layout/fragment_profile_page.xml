@@ -18,7 +18,7 @@
         tools:layout_editor_absoluteY="-2dp" />
 
     <ImageView
-        android:id="@+id/putihatas2"
+        android:id="@+id/pengaturan2"
         android:layout_width="600dp"
         android:layout_height="75dp"
         android:src="@drawable/putihatas" />

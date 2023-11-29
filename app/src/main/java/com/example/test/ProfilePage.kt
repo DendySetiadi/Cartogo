@@ -1,5 +1,6 @@
 package com.example.test
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,8 +31,10 @@ class ProfilePage : Fragment(R.layout.fragment_profile_page) {
 
         viewModel.profileImageUri.observe(viewLifecycleOwner, Observer { uri -> binding.profill.setImageURI(uri) })
 
-        binding.pengaturan.setOnClickListener {
-            replaceFragment(UbahProfile())
+        binding.pengaturan2.setOnClickListener {
+            // Pindah ke fragment lain (ganti dengan fragment yang sesuai)
+            val fragment = UbahProfile()
+            replaceFragment(fragment)
         }
     }
 
@@ -40,6 +43,7 @@ class ProfilePage : Fragment(R.layout.fragment_profile_page) {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragmentContainer, fragment)
         fragmentTransaction.commit()
+        fragmentTransaction.addToBackStack(null)
     }
 
     override fun onDestroyView() {

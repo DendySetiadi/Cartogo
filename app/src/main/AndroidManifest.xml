@@ -46,6 +46,10 @@
             android:name=".ProfilePage"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".UbahProfile"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>
