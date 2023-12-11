@@ -6,15 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.test.databinding.FragmentSearchPageBinding
+import com.google.firebase.FirebaseApp
 
 class SearchPage : Fragment(R.layout.fragment_search_page) {
-    lateinit var binding: FragmentSearchPageBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // Initialize Firebase using the application context
+        FirebaseApp.initializeApp(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSearchPageBinding.inflate(inflater, container, false)
-        return binding.root
+        val view = inflater.inflate(R.layout.fragment_search_page, container, false)
+        return view
     }
 }

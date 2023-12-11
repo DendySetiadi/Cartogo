@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".DenganSupir"
-    android:backgroundTint="@color/white">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".DenganSupir">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -162,4 +159,4 @@
             android:hint="Lokasi" />
     </com.google.android.material.textfield.TextInputLayout>
 
-</RelativeLayout>
+</FrameLayout>

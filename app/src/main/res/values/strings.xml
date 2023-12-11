@@ -1,30 +1,17 @@
 <resources>
-    <string name="app_name">test</string>
-    <string name="masukkan_password">Masukkan Password</string>
-    <string name="pasword">Masukkan Password</string>
+    <string name="app_name">Cartogo</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="invalid_user" />
+    <string name="invalid_credentials" />
+    <string name="auth_failed" />
+    <string name="empty_fields_not_allowed" />
+    <string name="password_length_error" />
     <string-array name="kabupaten">
         <item>Sleman</item>
         <item>Kulonprogo</item>
         <item>Bantul</item>
         <item>Gunungkidul</item>
         <item>Yogyakarta</item>
-    </string-array>
-    <string-array name="durasi">
-        <item>1 day</item>
-        <item>2 days</item>
-        <item>3 days</item>
-        <item>4 days</item>
-        <item>5 days</item>
-        <item>6 days</item>
-        <item>7 days</item>
-        <item>8 days</item>
-        <item>9 days</item>
-        <item>10 days</item>
-        <item>11 days</item>
-        <item>12 days</item>
-        <item>13 days</item>
-        <item>14 days</item>
     </string-array>
 </resources>

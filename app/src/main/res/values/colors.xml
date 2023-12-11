@@ -2,7 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="putih">#FDFEFF</color>
     <color name="blue">#24A8DF</color>
     <color name="abu">#979797</color>
     <color name="abumuda">#EBEAEA</color>
+    <color name="colorPrimary">#24A8DF</color>
 </resources>

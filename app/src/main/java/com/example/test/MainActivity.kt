@@ -1,81 +1,43 @@
 package com.example.test
 
-// grac3_Psp JGN DIHAPUS
-
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.Toast
+import android.view.LayoutInflater
+import android.view.inputmethod.InputBinding
+import androidx.fragment.app.Fragment
 import com.example.test.databinding.ActivityMainBinding
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
-import com.google.firebase.auth.FirebaseAuth
+import com.example.test.HomePage
+import com.example.test.ProfilePage
+import com.example.test.R
+import com.example.test.SearchPage
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var textInputLayout: TextInputLayout
-    private lateinit var textInputEditText: TextInputEditText
     private lateinit var binding: ActivityMainBinding
-    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        replaceFragment(HomePage())
 
-        // Initialize Firebase Authentication
-        firebaseAuth = FirebaseAuth.getInstance()
-
-        binding.lupakatasandi.setOnClickListener{
-            val intent = Intent(this, LupaSandi::class.java)
-            startActivity(intent)
-        }
-        binding.belumpunyaakun.setOnClickListener {
-            val intent = Intent(this, Daftar::class.java)
-            startActivity(intent)
-        }
-
-        binding.tombolmasuk.setOnClickListener {
-            val email = binding.masukemail2.text.toString()
-            val pass = binding.masukpassword.text.toString()
-
-            if (email.isNotEmpty() && pass.isNotEmpty()) {
-                firebaseAuth.signInWithEmailAndPassword(email, pass)
-                    .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
-                            val intent = Intent(this, View::class.java)
-                            startActivity(intent)
-                        } else {
-                            Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
-                        }
-                    }
-            } else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
+        binding.bottomNavigationView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.home -> replaceFragment(HomePage())
+                R.id.search -> replaceFragment(SearchPage())
+                R.id.profile -> replaceFragment(ProfilePage())
+                else -> {
+                    // Do something for other cases
+                }
             }
+            true
         }
+    }
 
-        textInputLayout = binding.TextInputLayout
-        textInputEditText = binding.masukpassword
-
-        textInputEditText.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(
-                charSequence: CharSequence,
-                i: Int,
-                i1: Int,
-                i2: Int
-            ) {
-            }
-
-            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-                val passwordInput = charSequence.toString()
-                if (passwordInput.length < 8) {
-                    textInputLayout.helperText = "Password must be 8 characters long"
-                    textInputLayout.error = null
-            }}
-
-            override fun afterTextChanged(editable: Editable) {}
-        })
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frame_layout, fragment)
+        fragmentTransaction.commit()
     }
 }

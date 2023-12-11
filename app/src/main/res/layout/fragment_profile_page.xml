@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,39 +7,44 @@
     android:layout_height="match_parent"
     tools:context=".ProfilePage">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        app:srcCompat="@drawable/rectangle_29"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-2dp" />
+    <Button
+        android:id="@+id/btnPengaturan"
+        android:layout_width="407dp"
+        android:layout_height="73dp"
+        android:backgroundTint="@color/putih"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/pengaturan2"
-        android:layout_width="600dp"
-        android:layout_height="75dp"
-        android:src="@drawable/putihatas" />
+    <TextView
+        android:id="@+id/editNamaa"
+        android:layout_width="261dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="80dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnPengaturan" />
 
     <ImageView
         android:id="@+id/profill"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="64dp"
+        android:layout_height="65dp"
         android:layout_marginLeft="5dp"
-        app:srcCompat="@drawable/baseline_account_circle_24"
-        android:background="@drawable/circle_background"
         android:layout_marginBottom="16dp"
-        android:scaleType="centerCrop"
+        android:background="@drawable/circle_background"
         android:clipToOutline="true"
-        android:outlineProvider="background"/>
+        android:outlineProvider="background"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/baseline_account_circle_24" />
 
-    <EditText
-        android:id="@+id/editNama"
-        android:layout_width="250dp"
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textSize="15dp" />
+        android:background="@android:color/white"
+        />
 
-</RelativeLayout>
+
+</FrameLayout>

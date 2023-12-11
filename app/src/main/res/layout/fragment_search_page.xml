@@ -1,65 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<!-- fragment_search.xml -->
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".SearchPage">
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        app:srcCompat="@drawable/rectangle_29"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-2dp" />
-
-    <ImageView
-        android:id="@+id/mobil"
-        android:layout_width="500dp"
-        android:layout_height="273dp"
-        android:src="@drawable/pexels_photo_13711948_1" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainer"
-        android:name="com.example.test.Lepaskunci"
-        android:layout_width="match_parent"
-        android:layout_height="590dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="155dp"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mobil" />
-
-    <Button
-        android:id="@+id/lepaskunci"
-        android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="110dp"
-        android:backgroundTint="@color/blue"
-        android:text="Lepas Kunci"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dengansupir"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainer" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/dengansupir"
-        android:layout_width="177dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginLeft="210dp"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="0dp"
-        android:backgroundTint="@color/abu"
-        android:text="Dengan Supir"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainer" />
+        <!-- Tambahkan CardView di sini untuk setiap item -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#F1F1F1">
 
-</RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Tambahkan layout item_mobil di sini -->
+                <ImageView
+                    android:id="@+id/imageMobil"
+                    android:layout_width="match_parent"
+                    android:layout_height="152dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder_image" />
+
+                <TextView
+                    android:id="@+id/textMerk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageMobil"
+                    android:paddingTop="8dp"
+                    android:text="Merk Mobil"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textHarga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textMerk"
+                    android:paddingTop="8dp"
+                    android:text="Harga Mobil"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tambahkan CardView lainnya jika diperlukan -->
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

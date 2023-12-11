@@ -105,7 +105,7 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
         }
 
         binding.masuk.setOnClickListener {
-            val intent = Intent(requireContext(), MainActivity::class.java)
+            val intent = Intent(requireContext(), Masuk::class.java)
             startActivity(intent)
         }
     }

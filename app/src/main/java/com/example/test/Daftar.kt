@@ -14,7 +14,7 @@ import java.util.regex.Pattern
 
 
 class Daftar : AppCompatActivity() {
-    private lateinit var  binding: DaftarBinding
+    private lateinit var binding: DaftarBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var textInputLayout: TextInputLayout
     private lateinit var textInputEditText: TextInputEditText
@@ -26,7 +26,7 @@ class Daftar : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         binding.masuk.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, Masuk::class.java)
             startActivity(intent)
         }
         binding.tomboldaftar.setOnClickListener{
