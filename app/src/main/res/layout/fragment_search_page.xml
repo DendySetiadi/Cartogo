@@ -55,6 +55,16 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
+        <Button
+            android:id="@+id/lokasi"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editjk"
+            android:text="Lokasi"
+            android:textSize="12dp" />
+
         <!-- Tambahkan CardView lainnya jika diperlukan -->
 
     </LinearLayout>
