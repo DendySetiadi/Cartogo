@@ -9,11 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.example.test.databinding.FragmentHomePageBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class HomePage : Fragment(R.layout.fragment_home_page){
     lateinit var binding: FragmentHomePageBinding
     var isLepaskunciActive = true // Variable to track the active button
-    
+    private lateinit var auth: FirebaseAuth
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +27,19 @@ class HomePage : Fragment(R.layout.fragment_home_page){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // Initialising Firebase Authentication
+        auth = FirebaseAuth.getInstance()
 
+        // Mengecek status login saat aplikasi dimulai
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            // Pengguna sudah login
+            val userEmail = currentUser.email
+            // Lakukan tindakan yang diperlukan setelah login
+        } else {
+            // Pengguna belum login
+            // Lakukan tindakan yang diperlukan untuk menavigasi ke halaman login atau lainnya
+        }
         binding.lepaskunci.setOnClickListener {
             replaceFragment(Lepaskunci())
             toggleButtonBackground(binding.lepaskunci)
