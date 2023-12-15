@@ -49,7 +49,10 @@ class HomePage : Fragment(R.layout.fragment_home_page){
             replaceFragment(DenganSupir())
             toggleButtonBackground(binding.dengansupir)
         }
+        val lepaskunciFragment = Lepaskunci()
+
     }
+
 
     private fun toggleButtonBackground(button: Button) {
         if (isLepaskunciActive) {

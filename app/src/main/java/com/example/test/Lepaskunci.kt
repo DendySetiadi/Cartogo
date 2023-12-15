@@ -1,5 +1,4 @@
 package com.example.test
-
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
@@ -16,9 +15,14 @@ import android.widget.TextView
 import android.widget.TimePicker
 import androidx.cardview.widget.CardView
 import androidx.core.widget.NestedScrollView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.test.databinding.FragmentLepaskunciBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import com.bumptech.glide.Glide
+import com.example.test.Masuk
+import com.example.test.Mobil
+import com.example.test.R
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -34,31 +38,46 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
     private lateinit var kotakjam1: ImageView
     private lateinit var jam1: TextView
     private lateinit var firestore: FirebaseFirestore
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var mobilAdapter: MobilAdapter
+    private lateinit var mobilList: MutableList<Mobil> // Pindahkan deklarasi di sini
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLepaskunciBinding.inflate(inflater, container, false)
+
         val kabupaten = resources.getStringArray(R.array.kabupaten)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_kabupaten, kabupaten)
         binding.autoComplete.setAdapter(arrayAdapter)
-        // Initialize firestore here
+
+        // Initialize Firestore
         firestore = FirebaseFirestore.getInstance()
+
+        // Initialize RecyclerView
+        recyclerView = binding.root.findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        // Initialize MobilAdapter
+        mobilAdapter = MobilAdapter(emptyList()) // You can pass an initial empty list
+        recyclerView.adapter = mobilAdapter
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        tanggalPengambilan = binding.root.findViewById(R.id.tanggalPengambilan)
-        tanggalPengembalian = binding.root.findViewById(R.id.tanggalPengembalian)
-        kotak_pengambilan = binding.root.findViewById(R.id.kotak_pengambilan)
-        kotak_pengembalian = binding.root.findViewById(R.id.kotak_pengembalian)
-        kotakjam = binding.root.findViewById(R.id.kotakjam)
-        jam = binding.root.findViewById(R.id.jam)
-        kotakjam1 = binding.root.findViewById(R.id.kotakjam1)
-        jam1 = binding.root.findViewById(R.id.jam1)
+        tanggalPengambilan = binding.tanggalPengambilan
+        tanggalPengembalian = binding.tanggalPengembalian
+        kotak_pengambilan = binding.kotakPengambilan
+        kotak_pengembalian = binding.kotakPengembalian
+        kotakjam = binding.kotakjam
+        jam = binding.jam
+        kotakjam1 = binding.kotakjam1
+        jam1 = binding.jam1
 
         val myCalendar = Calendar.getInstance()
         val datePicker = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
@@ -122,8 +141,15 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
             val tanggalPengembalian = binding.tanggalPengembalian.text.toString()
             val jamPengembalian = binding.jam1.text.toString()
 
-            cariDanTampilkanDataMobil(lokasiRental, tanggalPengambilan, jamPengambilan, tanggalPengembalian, jamPengembalian)
+            cariDanTampilkanDataMobil(
+                lokasiRental,
+                tanggalPengambilan,
+                jamPengambilan,
+                tanggalPengembalian,
+                jamPengembalian
+            )
         }
+
     }
 
     private fun updateLabel(myCalendar: Calendar) {
@@ -145,55 +171,33 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
         tanggalPengembalian: String,
         jamPengembalian: String
     ) {
+        mobilList = mutableListOf() // Inisialisasi di sini
+
         firestore.collection("mobil")
             .whereEqualTo("lokasi", lokasiRental)
             .get()
             .addOnSuccessListener { result ->
-                val mobilList = mutableListOf<Mobil>()
-
                 for (document in result) {
                     val mobil = document.toObject(Mobil::class.java)
                     mobilList.add(mobil)
                 }
 
-                tampilkanDataKeUI(mobilList)
+                // Panggil setHasilPencarian di sini
+                setHasilPencarian(mobilList)
             }
             .addOnFailureListener { exception ->
                 Log.e("Firestore", "Gagal mengambil data mobil: $exception")
             }
     }
 
-    private fun tampilkanDataKeUI(mobilList: List<Mobil>) {
-        val linearLayout = view?.findViewById<LinearLayout>(R.id.linearLayoutContainer)
+    private fun setHasilPencarian(mobilList: List<Mobil>) {
+        val hasilPencarianFragment = HasilPencarian()
+        hasilPencarianFragment.setHasilPencarian(mobilList)
 
-        for (mobil in mobilList) {
-            Log.d("Firestore", "Nama Mobil: ${mobil.nama}, Gambar: ${mobil.gambar}, Harga: ${mobil.harga}")
-
-            val cardView = layoutInflater.inflate(R.layout.cardview_mobil, null) as CardView
-            val imageMobil = cardView.findViewById<ImageView>(R.id.imageMobil)
-            val textMerk = cardView.findViewById<TextView>(R.id.textMerk)
-            val textHarga = cardView.findViewById<TextView>(R.id.textHarga)
-
-            val imageUrl = if (mobil.gambar.isNotEmpty()) mobil.gambar else "drawable/placeholder_image"
-
-            Glide.with(requireContext())
-                .load(imageUrl)
-                .placeholder(R.drawable.placeholder_image)
-                .error(R.drawable.placeholder_image)
-                .into(imageMobil)
-
-            textMerk.text = mobil.nama
-            // Periksa tipe harga dan konversi ke String
-            val hargaString = when (mobil.harga) {
-                is String -> mobil.harga
-                is Long -> mobil.harga.toString()
-                else -> ""
-            }
-            textHarga.text = "Rp.${hargaString}"
-
-            linearLayout?.addView(cardView)
-
-        }
-
+        val fragmentManager = requireActivity().supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragmentContainer, hasilPencarianFragment)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
     }
 }

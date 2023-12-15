@@ -2,4 +2,7 @@
 <resources>
     <item name="linearLayoutContainer" type="id" />
     <item name="fragment_container" type="id" />
+    <item name="recyclerView" type="id" />
+    <item name="recyclerViewHasil" type="id" />
+    <item name="recyclerViewHasilPencarian" type="id" />
 </resources>
