@@ -18,6 +18,18 @@ class ProfileManager(context: Context) {
         sharedPreferences.edit().putString("profileImageUri", uri.toString()).apply()
     }
 
+    var userFname: String
+        get() = sharedPreferences.getString(KEY_USER_FNAME, "") ?: ""
+        set(value) {
+            editor.putString(KEY_USER_FNAME, value).apply()
+        }
+
+    var userLname: String
+        get() = sharedPreferences.getString(KEY_USER_LNAME, "") ?: ""
+        set(value) {
+            editor.putString(KEY_USER_LNAME, value).apply()
+        }
+
     var userName: String
         get() = sharedPreferences.getString(KEY_USER_NAME, "") ?: ""
         set(value) {
@@ -36,16 +48,11 @@ class ProfileManager(context: Context) {
             editor.putString(KEY_USER_TELEPON, value).apply()
         }
 
-    var userJk: String
-        get() = sharedPreferences.getString(KEY_USER_JK, "") ?: ""
-        set(value) {
-            editor.putString(KEY_USER_JK, value).apply()
-        }
-
     companion object {
+        private const val KEY_USER_FNAME = "user_fname"
+        private const val KEY_USER_LNAME = "user_lname"
         private const val KEY_USER_NAME = "user_name"
         private const val KEY_USER_EMAIL = "user_email"
         private const val KEY_USER_TELEPON = "user_telepon"
-        private const val KEY_USER_JK = "user_jk"
     }
 }

@@ -43,24 +43,26 @@ class UbahProfile : Fragment(R.layout.fragment_ubah_profile) {
         binding.gantiProfil.setOnClickListener {
             openGallery()
         }
-
-        binding.editnama.setText(viewModel.profileManager?.userName)
-        binding.editemail.setText(viewModel.profileManager?.userEmail)
-        binding.edittelepon.setText(viewModel.profileManager?.userTelepon)
-        binding.editjk.setText(viewModel.profileManager?.userJk)
+        binding.editFname.setText(viewModel.profileManager?.userFname)
+        binding.editLname.setText(viewModel.profileManager?.userLname)
+        binding.editUname.setText(viewModel.profileManager?.userName)
+        binding.editEmail.setText(viewModel.profileManager?.userEmail)
+        binding.telpon.setText(viewModel.profileManager?.userTelepon)
 
         binding.simpan.setOnClickListener {
-            val newName = binding.editnama.text.toString()
+            val newFname = binding.editFname.text.toString()
+            val newLname = binding.editLname.text.toString()
+            val newName = binding.editUname.text.toString()
             viewModel.updateUserName(newName)
-            val newEmail = binding.editemail.text.toString()
-            val newTelepon = binding.edittelepon.text.toString()
-            val newJk = binding.editjk.text.toString()
+            val newEmail = binding.editEmail.text.toString()
+            val newTelepon = binding.telpon.text.toString()
 
             viewModel.profileManager?.apply {
+                userFname = newFname
+                userLname = newLname
                 userName = newName
                 userEmail = newEmail
                 userTelepon = newTelepon
-                userJk = newJk
             }
 
         }
