@@ -1,6 +1,5 @@
 package com.example.test
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -53,13 +52,15 @@ class ProfilePage : Fragment(R.layout.fragment_profile_page) {
         }
     }
 
+
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragmentContainer, fragment)
-        fragmentTransaction.commit()
         fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

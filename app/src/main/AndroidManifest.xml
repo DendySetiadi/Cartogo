@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Test"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA7uBZzJos7Xww4D72rh8q4kTlh7Mzn9Rc">
+        </meta-data>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -48,6 +52,10 @@
         </activity>
         <activity
             android:name=".UbahProfile"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".Transaksi"
             android:exported="false">
         </activity>
     </application>
