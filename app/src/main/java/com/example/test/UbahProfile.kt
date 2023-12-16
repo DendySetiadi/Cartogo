@@ -47,7 +47,7 @@ class UbahProfile : Fragment(R.layout.fragment_ubah_profile) {
         binding.editLname.setText(viewModel.profileManager?.userLname)
         binding.editUname.setText(viewModel.profileManager?.userName)
         binding.editEmail.setText(viewModel.profileManager?.userEmail)
-        binding.telpon.setText(viewModel.profileManager?.userTelepon)
+        binding.editTelepon.setText(viewModel.profileManager?.userTelepon)
 
         binding.simpan.setOnClickListener {
             val newFname = binding.editFname.text.toString()
@@ -55,7 +55,7 @@ class UbahProfile : Fragment(R.layout.fragment_ubah_profile) {
             val newName = binding.editUname.text.toString()
             viewModel.updateUserName(newName)
             val newEmail = binding.editEmail.text.toString()
-            val newTelepon = binding.telpon.text.toString()
+            val newTelepon = binding.editTelepon.text.toString()
 
             viewModel.profileManager?.apply {
                 userFname = newFname
