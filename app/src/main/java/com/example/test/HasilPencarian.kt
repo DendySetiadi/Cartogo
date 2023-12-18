@@ -35,6 +35,7 @@ class HasilPencarian : Fragment(R.layout.hasil_pencarian) {
         savedInstanceState: Bundle?
     ): View? {
         binding = HasilPencarianBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 

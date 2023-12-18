@@ -15,7 +15,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.test.HasilPencarian
+//import com.example.test.HasilPencarian
 import com.example.test.Masuk
 import com.example.test.Mobil
 import com.example.test.MobilAdapter
@@ -78,7 +78,7 @@ class DenganSupir : Fragment(R.layout.fragment_dengan_supir) {
             startActivity(intent)
         }
 
-        binding.tombolcari.setOnClickListener {
+        binding.tombolcari2.setOnClickListener {
             val lokasiRental = binding.autoComplete.text.toString()
             val tanggalPengambilan = binding.tanggal.text.toString()
             val jamPengambilan = binding.jam.text.toString()
@@ -173,5 +173,16 @@ class DenganSupir : Fragment(R.layout.fragment_dengan_supir) {
             // Tampilkan pesan "Produk tidak tersedia" menggunakan Toast
             Toast.makeText(requireContext(), "Produk tidak tersedia", Toast.LENGTH_SHORT).show()
         }
+    }
+    private fun showHasilPencarianDenganSupir() {
+        val fragment = HasilPencarian.newInstance(true)
+        // Tambahkan fragment ke container di aktivitas (atau lakukan transaksi fragment lainnya)
+
+    }
+
+    private fun showHasilPencarianLepasKunci() {
+        val fragment = HasilPencarian.newInstance(false)
+        // Tambahkan fragment ke container di aktivitas (atau lakukan transaksi fragment lainnya)
+
     }
 }
