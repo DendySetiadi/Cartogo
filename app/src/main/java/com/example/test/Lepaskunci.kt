@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.TimePicker
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -191,13 +192,32 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
     }
 
     private fun setHasilPencarian(mobilList: List<Mobil>) {
-        val hasilPencarianFragment = HasilPencarian()
-        hasilPencarianFragment.setHasilPencarian(mobilList)
+        if (mobilList.isNotEmpty()) {
+            val hasilPencarianFragment = HasilPencarian()
+            hasilPencarianFragment.setHasilPencarian(mobilList)
 
-        val fragmentManager = requireActivity().supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragmentContainer, hasilPencarianFragment)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
+            val fragmentManager = requireActivity().supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragmentContainer, hasilPencarianFragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        } else {
+            // Tampilkan pesan "Produk tidak tersedia" menggunakan Toast
+            Toast.makeText(requireContext(), "Produk tidak tersedia", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun showHasilPencarianDenganSupir() {
+        val fragment = HasilPencarian.newInstance(true)
+        // Tambahkan fragment ke container di aktivitas (atau lakukan transaksi fragment lainnya)
+
+    }
+
+    private fun showHasilPencarianLepasKunci() {
+        val fragment = HasilPencarian.newInstance(false)
+        // Tambahkan fragment ke container di aktivitas (atau lakukan transaksi fragment lainnya)
+
     }
 }
+
+
+

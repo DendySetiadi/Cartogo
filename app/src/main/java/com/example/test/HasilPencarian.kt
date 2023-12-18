@@ -1,15 +1,12 @@
 package com.example.test
+
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.test.Mobil
-import com.example.test.MobilAdapter
-import com.example.test.R
 import com.example.test.databinding.HasilPencarianBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -17,7 +14,21 @@ class HasilPencarian : Fragment(R.layout.hasil_pencarian) {
 
     private lateinit var binding: HasilPencarianBinding
     private lateinit var mobilAdapter: MobilAdapter
-    private val firestore = FirebaseFirestore.getInstance()
+    private lateinit var firestore: FirebaseFirestore
+    private var isDenganSupir: Boolean = false
+
+    companion object {
+        private const val ARG_IS_DENGAN_SUPIR = "is_dengan_supir"
+
+        fun newInstance(isDenganSupir: Boolean): HasilPencarian {
+            val fragment = HasilPencarian()
+
+            val args = Bundle()
+            args.putBoolean(ARG_IS_DENGAN_SUPIR, isDenganSupir)
+            fragment.arguments = args
+            return fragment
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,29 +41,22 @@ class HasilPencarian : Fragment(R.layout.hasil_pencarian) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mobilAdapter = MobilAdapter(emptyList()) // Inisialisasi adapter dengan daftar kosong
+        firestore = FirebaseFirestore.getInstance()
+        mobilAdapter = MobilAdapter(emptyList())
 
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = mobilAdapter
         }
 
-        // Panggil metode untuk mengambil data dari Firestore dan mengupdate hasil pencarian
+        isDenganSupir = arguments?.getBoolean(ARG_IS_DENGAN_SUPIR) ?: false
         ambilDanTampilkanDataMobil()
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        // Pindahkan fungsi ini ke onResume jika ingin mengeksekusinya setiap kali fragment ditampilkan
-        // ambilDanTampilkanDataMobil()
-    }
-
     private fun ambilDanTampilkanDataMobil() {
-        // Implementasikan logika pengambilan data dari Firestore di sini
-        // ...
+        val collectionPath = if (isDenganSupir) "mobil_supir" else "mobil"
 
-        firestore.collection("mobil")
+        firestore.collection(collectionPath)
             .get()
             .addOnSuccessListener { result ->
                 val mobilList = mutableListOf<Mobil>()
@@ -62,10 +66,7 @@ class HasilPencarian : Fragment(R.layout.hasil_pencarian) {
                     mobilList.add(mobil)
                 }
 
-                // Cetak jumlah mobil di logcat
                 Log.d("Firestore", "Jumlah mobil di Firestore: ${mobilList.size}")
-
-                // Panggil setHasilPencarian untuk mengupdate hasil pencarian
                 setHasilPencarian(mobilList)
             }
             .addOnFailureListener { exception ->
@@ -74,14 +75,10 @@ class HasilPencarian : Fragment(R.layout.hasil_pencarian) {
     }
 
     fun setHasilPencarian(mobilList: List<Mobil>) {
-
-            if (::mobilAdapter.isInitialized) {
-                mobilAdapter.updateData(mobilList)
-            } else {
-                // Handle case when mobilAdapter is not initialized
-                // You may choose to initialize it here or take other actions
-            }
+        if (::mobilAdapter.isInitialized) {
+            mobilAdapter.updateData(mobilList)
+        } else {
+            // Handle case when mobilAdapter is not initialized
         }
-
     }
-
+}

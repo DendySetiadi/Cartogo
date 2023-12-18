@@ -61,8 +61,11 @@ class HomePage : Fragment(R.layout.fragment_home_page){
             updateButtonBackground(binding.dengansupir, "#808080", "#24A8DF")
         }
         updateButtonBackground(button, "#24A8DF", "#808080")
+
+        // Update the status of the active button
         isLepaskunciActive = !isLepaskunciActive
     }
+
 
     private fun updateButtonBackground(button: Button, textColor: String, backgroundColor: String) {
         val grayColor = Color.parseColor(textColor)
@@ -75,4 +78,6 @@ class HomePage : Fragment(R.layout.fragment_home_page){
         fragmentTransaction.replace(R.id.fragmentContainer, fragment)
         fragmentTransaction.commit()
     }
+
+
 }
