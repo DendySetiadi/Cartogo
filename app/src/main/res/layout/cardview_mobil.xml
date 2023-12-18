@@ -1,15 +1,18 @@
 <!-- cardview_mobil.xml -->
-<androidx.cardview.widget.CardView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardElevation="4dp"
-    app:cardUseCompatPadding="true"
-    android:layout_marginTop="8dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp">
+    android:layout_height="335dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -27,7 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/placeholder_image" />
+                android:src="@drawable/placeholder_image"
+                android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:id="@+id/textMerk"
@@ -36,7 +40,8 @@
                 android:text="Merk Mobil"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
 
             <TextView
                 android:id="@+id/textHarga"
@@ -44,10 +49,13 @@
                 android:layout_height="wrap_content"
                 android:text="Harga Mobil"
                 android:textSize="16sp"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"/>
 
             <!-- Tambahkan elemen-elemen UI lainnya sesuai kebutuhan -->
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-</androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
