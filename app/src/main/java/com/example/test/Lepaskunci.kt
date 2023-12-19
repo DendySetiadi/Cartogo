@@ -1,6 +1,4 @@
 package com.example.test
-
-
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
@@ -12,13 +10,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.TimePicker
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.cardview.widget.CardView
+import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.test.databinding.FragmentLepaskunciBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.bumptech.glide.Glide
+import com.example.test.Masuk
+import com.example.test.Mobil
 import com.example.test.R
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -37,7 +41,8 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
     private lateinit var firestore: FirebaseFirestore
     private lateinit var recyclerView: RecyclerView
     private lateinit var mobilAdapter: MobilAdapter
-    private lateinit var mobilList: MutableList<Mobil>
+    private lateinit var mobilList: MutableList<Mobil> // Pindahkan deklarasi di sini
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,7 +62,7 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         // Initialize MobilAdapter
-        mobilAdapter = MobilAdapter(emptyList())
+        mobilAdapter = MobilAdapter(emptyList()) // You can pass an initial empty list
         recyclerView.adapter = mobilAdapter
 
         return binding.root
@@ -82,7 +87,6 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
             updateLabel(myCalendar)
         }
-
         val myCalendarr = Calendar.getInstance()
         val datePickerr = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
             myCalendarr.set(Calendar.YEAR, year)
@@ -90,7 +94,6 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
             myCalendarr.set(Calendar.DAY_OF_MONTH, dayOfMonth)
             updateLabell(myCalendarr)
         }
-
         kotakjam.setOnClickListener {
             val cal = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener { _, hour, minute ->
@@ -100,7 +103,6 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
             }
             TimePickerDialog(requireContext(), timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
         }
-
         kotakjam1.setOnClickListener {
             val cal = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener { _, hour, minute ->
@@ -110,7 +112,6 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
             }
             TimePickerDialog(requireContext(), timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
         }
-
         kotak_pengambilan.setOnClickListener {
             DatePickerDialog(
                 requireContext(),
@@ -120,7 +121,6 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
                 myCalendar.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
-
         kotak_pengembalian.setOnClickListener {
             DatePickerDialog(
                 requireContext(),
@@ -135,7 +135,6 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
             val intent = Intent(requireContext(), Masuk::class.java)
             startActivity(intent)
         }
-
         binding.tombolcari.setOnClickListener {
             val lokasiRental = binding.autoComplete.text.toString()
             val tanggalPengambilan = binding.tanggalPengambilan.text.toString()
@@ -151,6 +150,7 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
                 jamPengembalian
             )
         }
+
     }
 
     private fun updateLabel(myCalendar: Calendar) {
@@ -172,12 +172,10 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
         tanggalPengembalian: String,
         jamPengembalian: String
     ) {
-        mobilList = mutableListOf()
+        mobilList = mutableListOf() // Inisialisasi di sini
 
         firestore.collection("mobil")
             .whereEqualTo("lokasi", lokasiRental)
-            .whereEqualTo("tanggalPengambilan", tanggalPengambilan)
-            .whereEqualTo("jamPengambilan", jamPengambilan)
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {
@@ -185,60 +183,11 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
                     mobilList.add(mobil)
                 }
 
+                // Panggil setHasilPencarian di sini
                 setHasilPencarian(mobilList)
-
-                // Panggil fungsi tambahkanDataMobil setelah menampilkan hasil pencarian
-                tambahkanDataMobil(lokasiRental, tanggalPengambilan, jamPengambilan, tanggalPengambilan, jamPengambilan)
             }
             .addOnFailureListener { exception ->
                 Log.e("Firestore", "Gagal mengambil data mobil: $exception")
-            }
-    }
-
-    private fun tambahkanDataMobil(
-        lokasiRental: String,
-        tanggalPengambilan: String,
-        jamPengambilan: String,
-        tanggalPengembalian: String,
-        jamPengembalian: String
-    ) {
-        val dataSudahAda = cariDanTampilkanDataMobil(
-            lokasiRental,
-            tanggalPengambilan,
-            jamPengambilan,
-            tanggalPengembalian,
-            jamPengembalian
-        )
-
-        if (dataSudahAda != null && dataSudahAda !=null) {
-            val mobil = Mobil(
-                nama = "Toyota Avanza",
-                gambar = "https://www.toyota.astra.co.id/sites/default/files/2023-09/avanza%20g%20type_2_4.png",
-                harga = 150000.0,
-                lokasi = lokasiRental,
-                tanggalPengambilan = "",
-                jamPengambilan = jamPengambilan,
-                tanggalPengembalian ="",
-                jamPengembalian = ""
-            )
-
-            tambahkanDataBaruKeFirestore(mobil)
-        } else {
-            // Jika data sudah ada, lakukan tindakan sesuai kebutuhan
-            // ...
-        }
-    }
-
-    private fun tambahkanDataBaruKeFirestore(mobil: Mobil) {
-        firestore.collection("mobil")
-            .add(mobil)
-            .addOnSuccessListener { documentReference ->
-                Log.d("Firestore", "Dokumen berhasil ditambahkan dengan ID: ${documentReference.id}")
-                // Di sini Anda bisa menambahkan tindakan setelah data berhasil ditambahkan, jika diperlukan
-            }
-            .addOnFailureListener { exception ->
-                Log.e("Firestore", "Gagal menambahkan dokumen", exception)
-                // Di sini Anda bisa menambahkan tindakan jika penambahan data gagal
             }
     }
 
@@ -253,17 +202,19 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         } else {
+            // Tampilkan pesan "Produk tidak tersedia" menggunakan Toast
             Toast.makeText(requireContext(), "Produk tidak tersedia", Toast.LENGTH_SHORT).show()
         }
     }
-
     private fun showHasilPencarianDenganSupir() {
         val fragment = HasilPencarian.newInstance(true)
         // Tambahkan fragment ke container di aktivitas (atau lakukan transaksi fragment lainnya)
+
     }
 
     private fun showHasilPencarianLepasKunci() {
         val fragment = HasilPencarian.newInstance(false)
         // Tambahkan fragment ke container di aktivitas (atau lakukan transaksi fragment lainnya)
+
     }
 }
