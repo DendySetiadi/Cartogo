@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/materialToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
+                android:backgroundTint="@color/putih"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="144dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_gravity="right|center"
+                app:srcCompat="@drawable/screenshot_2023_06_03_2204552_removebg_preview" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Syarat Sewa Mobil"
+            android:textSize="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="92dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="404dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Ketentuan Umum"
+                android:textSize="23dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="422dp"
+            android:layout_height="94dp"
+
+            android:layout_marginTop="4dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="366dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="* Durasi sewa adalah 24 (dua puluh empat) jam.
+                                                    * Pemakaian kendaraan maksimum 250 (dua ratus lima puluh) km atau sesuai dengan kebijakan vendor.
+                                                    * Penyewa bertanggung jawab terhadap biaya yang disebutkan di ketentuan biaya-biaya di bawah."
+                android:textSize="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="404dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Sebelum Perjalanan"
+                android:textSize="23dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView9"
+            android:layout_width="422dp"
+            android:layout_height="382dp"
+
+            android:layout_marginTop="4dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="366dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="1. Setelah pesanan dikonfirmasi, penyewa wajib menyediakan foto dokumen berikut:
+                                                                                        * Kartu identitas wajib: KTP/Paspor
+                                                                                        * SIM A/SIM Internasional (untuk sewa mobil
+                                                                                        * Kartu kredit atau STNK mobil/motor atas nama penyewa (dapat diganti dengan dokumen lain jika tidak ada)
+                                                                                        * Akun rekening penyewa (nama bank, nomor rekening dan atas nama) untuk pengembalian deposit.
+                                                                                        2. Dokumen dan data tambahan (mungkin diminta oleh vendor)
+                                                                                        * Kartu identitas tambahan: ID Kerja, ID Pelajar
+                                                                                        * Akun sosial media yang aktif.
+                                                                                                        * KK
+                                                                                                                3. Kelengkapan dokumen wajib dikirimkan kepada vendor paling lambat 6 (enam) jam sebelum penggunaan.
+                                                                                                                4. Penyewa wajib membawa dan menunjukkan dokumen asli pada saat serah terima kendaraan.
+                                                                                                                * Penyewa wajib menyerahkan deposit sebesar:
+                                                                                                                * Rp200.000 s.d Rp1.000.000 - untuk sewa mobil
+                                                                                                                5. Besar deposit dapat berbeda, bergantung pada jenis kendaraan dan kebijakan vendor.
+                                                                                                                6. Sepakati lokasi pengambilan atau pengembalian kendaraan dengan vendor rental.
+                                                                                                                7. Untuk pengambilan dan pengembalian kendaraan (tidak diambil atau diantar di/ke pool vendor), besaran biaya mengikuti ketentuan biaya tambahan pengambilan dan pengembalian kendaraan."
+                android:textSize="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView11"
+            android:layout_width="404dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView9">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Setelah Perjalanan"
+            android:textSize="23dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="92dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView12"
+            android:layout_width="427dp"
+            android:layout_height="225dp"
+
+            android:layout_marginTop="4dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView11">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="366dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="* Penyewa harus mengembalikan kendaraan dengan volume BBM sesuai dengan posisi pada saat penjemputan atau mengikuti bar awal (bar to bar).
+                                                                                        * Vendor berhak untuk menahan deposit jika kendaraan rusak atau penyewa melanggar hukum selama periode sewa.
+                                                                                        * Deposit akan dikembalikan dalam 5 (lima) hari kerja.
+                                                                                            * Jika ada tilang elektronik pada hari sewa, maka deposit yang dikembalikan akan dipotong sejumlah denda tilang elektronik tersebut.
+                                                                                                        * Vendor dan Cartogo tidak bertanggung jawab atas barang yang tertinggal di kendaraan setelah melakukan serah terima.
+                                                                                                        * Biaya asuransi dan biaya lainnya yang timbul atas kerusakan dan kehilangan kendaraan akan menjadi tanggung jawab penyewa sesuai dengan ketentuan masing-masing vendor."
+                android:textSize="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView13"
+            android:layout_width="404dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView12">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Biaya-Biaya"
+            android:textSize="23dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="92dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView14"
+            android:layout_width="423dp"
+            android:layout_height="154dp"
+
+            android:layout_marginTop="4dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView13">
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="366dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="1. Biaya sewa termasuk: 1 (satu) unit kendaraan
+                                                                                                    2. Biaya sewa tidak termasuk:
+                                                                            * Biaya deposit Rp200.000 s.d Rp1.000.000 (bergantung pada jenis kendaraan dan ketentuan vendor).
+                                                                                                * Biaya tol, BBM, parkir dan overtime.
+                                                                * Denda parkir, lalu lintas, dan lainnya yang terjadi akibat pelanggaran hukum selama periode rental.
+                                                                * Biaya asuransi dan biaya lainnya yang timbul atas kerusakan atau kehilangan kendaraan selama periode sewa."
+                android:textSize="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView15"
+            android:layout_width="404dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView14">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Penyangkalan"
+            android:textSize="23dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="92dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView16"
+            android:layout_width="426dp"
+            android:layout_height="427dp"
+
+            android:layout_marginTop="4dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView15">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="366dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="1. Kendaraan hanya dapat digunakan oleh penumpang dengan nama yang tercantum di e-tiket. Penumpang dilarang membawa binatang peliharaan.
+                                                                                                    2. E-tiket tidak dapat ditukar, diuangkan, maupun dipindahtangankan.
+                                                                                    3. Kendaraan sewa tidak dapat dipergunakan untuk angkutan umum, angkutan barang, dan sejenisnya.
+                                            4. Kapasitas penumpang mengikuti kapasitas kendaraan dan kebijakan masing-masing daerah sesuai aturan yang berlaku."
+                android:textSize="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="366dp"
+                android:layout_height="246dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="175dp"
+                android:text="* Vendor berhak untuk membatalkan penyewaan dengan alasan force majeure (bencana alam) dan berhak menolak penyewa yang dianggap tidak memenuhi syarat sebagai penyewa atau bertindak tidak wajar. Cartogo tidak bertanggung jawab atas pembatalan dan penolakan tersebut.
+                                                                                    * Apabila unit yang dipesan tidak tersedia, vendor diperbolehkan wajib mengganti kendaraan dengan model yang serupa atau lebih tinggidengan persetujuan penyewa terlebih dahulu.
+                                                                                   * Penyewa wajib mengikuti dan menaati kebijakan pemerintah mengenai peraturan perjalanan transportasi darat.
+                                                                                        * Kehilangan dan kerusakan barang selama perjalanan di luar tanggung jawab vendor dan Cartogo.
+                                                    * Cartogo tidak bertanggung jawab terhadap kecelakaan, kerugian, korban, dan pengobatan yang timbul dari kecelakaan tersebut. Lingkup tanggung jawab Cartogo hanya sampai pada penerimaan informasi dan penyampaian kepada vendor perihal ganti rugi kepada penyewa (jika ada)."
+                android:textSize="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

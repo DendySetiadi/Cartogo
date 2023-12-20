@@ -2,14 +2,14 @@ package com.example.test
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.test.databinding.SyaratDenganSupirBinding
+import com.example.test.databinding.SyaratTanpaSupirBinding
 
-class SyaratDenganSupir : AppCompatActivity() {
-    private lateinit var binding: SyaratDenganSupirBinding
+class SyaratTanpaSupir : AppCompatActivity() {
+    private lateinit var binding: SyaratTanpaSupirBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = SyaratDenganSupirBinding.inflate(layoutInflater)
+        binding = SyaratTanpaSupirBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // Now you can access the views using `binding.viewId`
     }

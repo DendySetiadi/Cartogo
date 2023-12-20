@@ -58,8 +58,18 @@
             android:name=".Transaksi"
             android:exported="false">
         </activity>
-        <activity android:name=".CaraMenyewa" />
-        <activity android:name=".SyaratDenganSupir" />
+        <activity
+            android:name=".CaraMenyewa"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".SyaratDenganSupir"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".SyaratTanpaSupir"
+            android:exported="false">
+        </activity>
 
     </application>
 
