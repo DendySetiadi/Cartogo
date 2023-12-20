@@ -59,6 +59,7 @@
             android:exported="false">
         </activity>
         <activity android:name=".CaraMenyewa" />
+        <activity android:name=".SyaratDenganSupir" />
 
     </application>
 

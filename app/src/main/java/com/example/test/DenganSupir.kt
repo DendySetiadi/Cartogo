@@ -81,6 +81,10 @@ class DenganSupir : Fragment(R.layout.fragment_dengan_supir) {
             val intent = Intent(requireContext(), CaraMenyewa::class.java)
             startActivity(intent)
         }
+        binding.carasyarat.setOnClickListener {
+            val intent = Intent(requireContext(), SyaratDenganSupir::class.java)
+            startActivity(intent)
+        }
         binding.tombolcari2.setOnClickListener {
             val lokasiRental = binding.autoComplete.text.toString()
             val tanggalPengambilan = binding.tanggal.text.toString()
