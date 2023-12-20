@@ -11,10 +11,13 @@
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     tools:context=".Cardview"
-    android:id="@+id/kotakcardview">
+
+    android:id="@+id/kotakcardview"
+    >
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
+        android:backgroundTint="@color/putih"
         android:layout_height="wrap_content">
 
         <!-- Konten CardView -->
@@ -22,14 +25,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            >
 
             <ImageView
                 android:id="@+id/imageMobil"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/placeholder_image" />
+                android:src="@drawable/placeholder_image"
+                />
 
             <TextView
                 android:id="@+id/textMerk"
