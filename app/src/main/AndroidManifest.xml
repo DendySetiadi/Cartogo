@@ -58,6 +58,8 @@
             android:name=".Transaksi"
             android:exported="false">
         </activity>
+        <activity android:name=".CaraMenyewa" />
+
     </application>
 
 </manifest>

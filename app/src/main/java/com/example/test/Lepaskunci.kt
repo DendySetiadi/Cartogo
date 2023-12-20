@@ -130,7 +130,10 @@ class Lepaskunci : Fragment(R.layout.fragment_lepaskunci) {
                 myCalendarr.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
-
+        binding.tombolcara.setOnClickListener {
+            val intent = Intent(requireContext(), CaraMenyewa::class.java)
+            startActivity(intent)
+        }
         binding.masuk.setOnClickListener {
             val intent = Intent(requireContext(), Masuk::class.java)
             startActivity(intent)

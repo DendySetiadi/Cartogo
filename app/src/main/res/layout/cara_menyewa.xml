@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".CaraMenyewa">
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="409dp"
@@ -37,20 +43,21 @@
     </androidx.cardview.widget.CardView>
 
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Layanan Sewa Mobil"
-        android:textSize="23dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="92dp" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:text="Layanan Sewa Mobil"
+            android:textSize="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="92dp" />
 
-    <androidx.cardview.widget.CardView
+        <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="409dp"
-        android:layout_height="226dp"
+        android:layout_width="413dp"
+        android:layout_height="254dp"
         android:layout_marginTop="25dp"
 
         app:cardElevation="8dp"
@@ -103,11 +110,198 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="155dp"
             android:text="Kami menyediakan solusi transportasi yang menyeluruh dan profesional
-             dengan menyewakan mobil bersama sopir berpengalaman untuk memastikan perjalanan Anda berjalan lancar dan menyenangkan."
+             dengan
+            menyewakan mobil bersama sopir berpengalaman untuk memastikan perjalanan Anda berjalan lancar dan menyenangkan."
             android:textSize="11dp"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="92dp" />
 
     </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Cara Menyewa Mobil di Cartogo"
+            android:textSize="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="401dp"
+            android:layout_height="1277dp"
+
+            android:layout_marginTop="68dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="1. Pilih Layanan"
+                android:textSize="20dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="381dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="110dp"
+                android:text="Kamu harus memilih layanan sewa mobil lepas  kunci (penyewaan selama 24 jam/hari) atau dengan sopir (penyewaan selama 12 jam/hari).Kamu harus memilih layanan sewa mobil lepas
+
+                kunci (penyewaan selama 24 jam/hari) atau dengan sopir (penyewaan selama 12 jam/hari)."
+                android:textSize="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="200dp"
+                android:text="2. Isi lokasi, tanggal dan waktu sewa"
+                android:textSize="20dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="370dp"
+                android:text="Lokasi sewa merupakan kabupaten yang ada di kota Yogyakarta."
+                android:textSize="11dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="329dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="50dp"
+                app:srcCompat="@drawable/img" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="194dp"
+                android:layout_height="122dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="240dp"
+                app:srcCompat="@drawable/img_1" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="400dp"
+                android:text="4. Cara Menyewa Mobil di Cartogo"
+                android:textSize="20dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="194dp"
+                android:layout_height="122dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="450dp"
+                app:srcCompat="@drawable/img_2" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="585dp"
+                android:text="Pilih vendor sesuai dengan keinginanmu."
+                android:textSize="11dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="620dp"
+                android:text="5. Periksa ulang pesanan"
+                android:textSize="20dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="186dp"
+                android:layout_height="185dp"
+                android:layout_marginLeft="115dp"
+                android:layout_marginTop="680dp"
+                app:srcCompat="@drawable/img_3" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="880dp"
+                android:text="Jangan sampai ada yang salah ya setelah mengonfirmasi pesanan."
+                android:textSize="11dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="910dp"
+                android:text="6. Lakukan pembayaran"
+                android:textSize="20dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="186dp"
+                android:layout_height="185dp"
+                android:layout_marginLeft="115dp"
+                android:layout_marginTop="960dp"
+                app:srcCompat="@drawable/screenshot_2023_12_21_014659" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="375dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="1160dp"
+                android:text="Untuk menyelesaikan transaksi penyewaan, jangan lupa untuk melakukan pembayaran."
+                android:textSize="11dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="92dp" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
